@@ -1,17 +1,17 @@
 /*10.
 Uma escola de basquete distribui os jogadores em categorias conforme altura e idade.
-Existem quatro categorias: infantil, j˙nior, profissional e sÍnior.
-Os seguintes critÈrios s„o utilizados para categorizar os atletas:
+Existem quatro categorias: infantil, j√∫nior, profissional e s√™nior.
+Os seguintes crit√©rios s√£o utilizados para categorizar os atletas:
 
 					----------	categoria	---------
 
-                infantil	junior		profissional	senior
-idade(anos)		6 a 10    	11 a 17 	18 a 35			acima de 35
+                infantil	junior		profissional		senior
+idade(anos)	6 a 10    	11 a 17 	18 a 35			acima de 35
 altura(metros)	>= 1,00   	>= 1,40  	>= 1,70			>= 1,60
 
-Jogadores que n„o se enquadram nos critÈrios acima n„o est„o aptos a participar dos times da escola.
-FaÁa um algoritmo que leia a idade e a altura de um jogador e escreva a categoria ‡ qual ele pertence.
-Caso o jogador n„o se enquadre em nenhuma categoria da escola, escreva ìN„o aptoî.
+Jogadores que n√£o se enquadram nos crit√©rios acima n√£o est√£o aptos a participar dos times da escola.
+Fa√ßa um algoritmo que leia a idade e a altura de um jogador e escreva a categoria √† qual ele pertence.
+Caso o jogador n√£o se enquadre em nenhuma categoria da escola, escreva ‚ÄúN√£o apto‚Äù.
 */
 
 #include <stdio.h>
@@ -29,7 +29,7 @@ int main()
     printf("\ndig h: ");
     scanf("%f",&h);
 
-    //pros - saÌda
+    //pros - sa√≠da
     if(i>=6&&i<=10){
         if(h>=1.00){
             printf("\ncat: infantil!");
