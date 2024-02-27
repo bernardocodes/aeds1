@@ -1,4 +1,12 @@
-/*cÛdigo como estava:
+/*13. Fa√ßa um algoritmo que encontre as ra√≠zes de uma equa√ß√£o do segundo grau 
+
+ax^2 + bx + c. 
+
+O algoritmo deve ler
+os coeficientes a, b e c e determinar as ra√≠zes da equa√ß√£o. Caso as ra√≠zes n√£o sejam reais, imprimir uma
+mensagem informando.*/
+
+/*c√≥digo como estava:
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +15,7 @@
 int main()
 {
     //mem
-    float r1,r2;//raÌzes reais
+    float r1,r2;//ra√≠zes reais
     float delta;
     float a,b,c;//coeficientes
 
@@ -20,7 +28,7 @@ int main()
     scanf("%f",&c);
 
     //pros
-    delta = pow(b,2)-4*a*c;//c·lculo do delta
+    delta = pow(b,2)-4*a*c;//c√°lculo do delta
 
     if(delta<0){//delta pertence a R?
         printf("\nraizes nao existem em reias!");
@@ -30,7 +38,7 @@ int main()
     r2 = (-b - sqrt(delta))/2*a;
     }//fim else if
 
-    //saÌda:
+    //sa√≠da:
     printf("\nr1 = %f",r1);
     printf("\nr2 = %f",r2);
 
@@ -44,7 +52,7 @@ int main()
 int main()
 {
     //mem
-    float r1,r2;//raÌzes reais
+    float r1,r2;//ra√≠zes reais
     float delta;
     float a,b,c;//coeficientes
 
@@ -58,7 +66,7 @@ int main()
 
 
     //pros
-    delta = pow(b,2)-4*a*c;//c·lculo do delta
+    delta = pow(b,2)-4*a*c;//c√°lculo do delta
 
     //testando
     printf("\ndelta = %f",delta);
@@ -67,7 +75,7 @@ int main()
     if(delta<0){//delta pertence a R?
         printf("\nraizes nao existem em reias!");
         exit(0);
-    }else if(delta>=0){//O ERRO ESTAVA AQUI - NA PROCED NCIA DE OPERA«’ES (SEGUE DUAS FORMAS DIFERENTES DE REPRESENTAR:)
+    }else if(delta>=0){//O ERRO ESTAVA AQUI - NA PROCED√äNCIA DE OPERA√á√ïES (SEGUE DUAS FORMAS DIFERENTES DE REPRESENTAR:)
 
     r1 = sqrt(delta);//PRIMEIRA FORMA,
     r1 = (-b + r1);
@@ -77,7 +85,7 @@ int main()
 
     }//fim else if
 
-    //saÌda:
+    //sa√≠da:
     printf("\nr1 = %.3f",r1);
     printf("\nr2 = %.3f",r2);
 
