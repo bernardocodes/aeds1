@@ -68,13 +68,13 @@ int main()
     if(resto>0&&resto<=90){
         printf("primeiro quadrante!\n");
     }
-    if(resto>91&&resto<=180){
+    if(resto>=91&&resto<=180){
         printf("segundo quadrante!\n");
     }
-    if(resto>181&&resto<=270){
+    if(resto>=181&&resto<=270){
         printf("terceiro quadrante!\n");
     }
-    if(resto>271&&resto<=360){
+    if(resto>=271&&resto<=360){
         printf("quarto quadrante!\n");
     }
 
