@@ -9,6 +9,7 @@ int main()
     int l;
     char c;
     int cont;
+    int aux = l-2;
 
     //entrada
     printf("dig num inteiro: \n");
@@ -48,22 +49,19 @@ int main()
 
         case 'p':
 
+
             for(int lin=0;lin<l;lin++){
                 printf("*");
-                for(int i=0;i<l;i++){
-                    if(lin==0){
+                aux = aux - 1;
+                for(int i=0;i<l-2;i++){
+                    if(lin==0||lin==l-1){
                         printf("*");
-                    }else if(lin==l-1){
+                    }else if(i==aux){
                         printf("*");
                     }else{
-                        if(l-(lin+1)){//aqui
-                            printf(" ");
-                        }else{
-                            printf("*");
-                        }
-
-                    }//fim else
-                }//fim for
+                        printf(" ");
+                    }
+                }
                 printf("*\n");
             }
 
