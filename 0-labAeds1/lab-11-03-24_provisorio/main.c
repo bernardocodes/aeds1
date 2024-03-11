@@ -1,9 +1,11 @@
+//a b está imprimindo doi char a mais em cada linha
+
 #include <stdio.h>
 #include <stdlib.h>
 
 int main()
 {
-    //mem�ria
+    //memória
     int l;
     char c;
     int cont;
