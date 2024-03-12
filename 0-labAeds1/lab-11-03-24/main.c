@@ -1,83 +1,95 @@
-//corrigido
-
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-    //memória
-    int l;
-    char c;
-    int cont;
-    int aux = l-2;
+int main() {
+    int lado, linha, coluna, diagonal;
+    char quadrado;
 
-    //entrada
-    printf("dig num inteiro: \n");
-    scanf("%d%*c",&l);
-    printf("dig caractere: \n");
-    scanf("%c%*c",&c);
+    printf("Tamanho do lado:");
+    scanf("%d", &lado);
+    getchar(); // Para consumir a quebra de linha deixada pelo scanf anterior
 
-    switch(c){
+    printf("Escolha sua figura:");
+    scanf("%c", &quadrado);
+    getchar(); // Para consumir a quebra de linha deixada pelo scanf anterior
 
-        case 'c'://quadrado preenchido
-
-            for(int lin=0;lin<l;lin++){
-                for(int i=0;i<l;i++){
+    switch (quadrado) {
+        case 'c': // quadrado preenchido
+            for (linha = 0; linha < lado; linha++) {
+                for (coluna = 0; coluna < lado; coluna++) {
                     printf("*");
                 }
                 printf("\n");
             }
-
             break;
 
-        case 'b'://somente bordas
-            for(int lin=0;lin<l;lin++){
-                printf("*");
-                for(int i=0;i<l-2;i++){
-                    if(lin==0){
+        case 'b': // somente bordas
+            for (linha = 0; linha < lado; linha++) {
+                for (coluna = 0; coluna < lado; coluna++) {
+                    if (coluna == 0 || coluna == lado - 1 || linha == 0 || linha == lado - 1) {
                         printf("*");
-                    }else if(lin==l-1){
-                        printf("*");
-                    }else{
-                        printf(" ");
-                    }
-
-                }
-                printf("*\n");
-            }
-            break;
-
-        case 'p':
-
-
-            for(int lin=0;lin<l;lin++){
-                printf("*");
-                aux = aux - 1;
-                for(int i=0;i<l-2;i++){
-                    if(lin==0||lin==l-1){
-                        printf("*");
-                    }else if(i==aux){
-                        printf("*");
-                    }else{
+                    } else {
                         printf(" ");
                     }
                 }
-                printf("*\n");
+                printf("\n");
             }
-
             break;
 
-        case 'e':
+        case 'p': // borda e diagonal principal
+            for (linha = 0; linha < lado; linha++) {
+                for (coluna = 0; coluna < lado; coluna++) {
+                    if (linha == 0 || coluna == 0 || coluna == lado - 1 || linha == lado - 1 || linha == coluna) {
+                        printf("*");
+                    } else {
+                        printf(" ");
+                    }
+                }
+                printf("\n");
+            }
             break;
 
-        case 'h':
+        case 's': // borda e diagonal secundaria
+            for (linha = 0; linha < lado; linha++) {
+                for (coluna = 0; coluna < lado; coluna++) {
+                    if (coluna == 0 || coluna == lado - 1 || linha == 0 || linha == lado - 1 || linha + coluna == lado - 1) {
+                        printf("*");
+                    } else {
+                        printf(" ");
+                    }
+                }
+                printf("\n");
+            }
             break;
 
-        case 'v':
+        case 'h': // bordas e divisao horizontal
+            for (linha = 0; linha < lado; linha++) {
+                for (coluna = 0; coluna < lado; coluna++) {
+                    if (coluna == 0 || coluna == lado - 1 || linha == 0 || linha == lado - 1 || linha == lado / 2) {
+                        printf("*");
+                    } else {
+                        printf(" ");
+                    }
+                }
+                printf("\n");
+            }
+            break;
+
+        case 'v': // bordas e divisao vertical
+            for (linha = 0; linha < lado; linha++) {
+                for (coluna = 0; coluna < lado; coluna++) {
+                    if (coluna == 0 || coluna == lado - 1 || linha == 0 || linha == lado - 1 || coluna == lado / 2) {
+                        printf("*");
+                    } else {
+                        printf(" ");
+                    }
+                }
+                printf("\n");
+            }
             break;
 
         default:
-            printf("opc invalida!");
+            printf("opc desconhecida!");
     }
 
     return 0;
