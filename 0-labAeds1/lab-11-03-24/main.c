@@ -9,7 +9,7 @@ int main()
     int l;
     char c;
     int cont;
-    int aux = l-2;
+    int aux;
 
     //entrada
     printf("dig num inteiro: \n");
@@ -24,13 +24,14 @@ int main()
             for(int lin=0;lin<l;lin++){
                 for(int i=0;i<l;i++){
                     printf("*");
-                }
+                }//fim for
                 printf("\n");
-            }
+            }//fim for
 
-            break;
+            break;//fim case c
 
         case 'b'://somente bordas
+
             for(int lin=0;lin<l;lin++){
                 printf("*");
                 for(int i=0;i<l-2;i++){
@@ -40,16 +41,15 @@ int main()
                         printf("*");
                     }else{
                         printf(" ");
-                    }
-
-                }
+                    }//fim else
+                }//fim for
                 printf("*\n");
-            }
-            break;
+            }//fim for
 
-        case 'p':
+            break;//fim b
 
-
+        case 'p'://diagonal principal
+            aux = l-2;
             for(int lin=0;lin<l;lin++){
                 printf("*");
                 aux = aux - 1;
@@ -60,14 +60,30 @@ int main()
                         printf("*");
                     }else{
                         printf(" ");
-                    }
-                }
+                    }//fim else
+                }//fim for
                 printf("*\n");
-            }
+            }//fim for
 
-            break;
+            break;//fim p
 
-        case 'e':
+        case 's'://diagonal secundária
+            aux = 0;
+            for(int lin=0;lin<l;lin++){
+                printf("*");
+                aux = aux + 1;
+                for(int i=0;i<l-2;i++){
+                    if(lin==0||lin==l-1){
+                        printf("*");
+                    }else if(i==aux){
+                        printf("*");
+                    }else{
+                        printf(" ");
+                    }//fim else
+                }//fim for
+                printf("*\n");
+            }//fim for
+
             break;
 
         case 'h':
