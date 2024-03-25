@@ -1,9 +1,8 @@
 /*
-Exercício 4
-
-Escreva um programa em Portugol e em C que receba através da entrada do usuário, dois números
-a serem comparados. O programa deve imprimir o maior dos dois, mas caso sejam iguais, deve
-imprimir "os números são iguais".
+ExercÃ­cio 5
+Escreva um programa em Portugol e em C que receba dois nÃºmeros atravÃ©s da entrada do usuÃ¡rio
+e imprima: a) o maior deles; b) seu produto; c) a mÃ©dia aritmÃ©tica; e d) a soma do antecessor do
+primeiro com o sucessor do segundo.
 */
 
 #include <stdio.h>
@@ -27,7 +26,7 @@ int main()
 
     media=(n1+n2)/2;//media
 
-    printf("maior: %d\n",maior);//saída
+    printf("maior: %d\n",maior);//saÃ­da
     printf("produto: %d\n",produto);
     printf("media: %f\n",media);
     printf("ant n1 + suc n2 : %d\n",(n1-1)+(n2+1));
