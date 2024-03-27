@@ -56,7 +56,7 @@ int main()
         aux=n1-n2;//definindo max de num
 
         for(int i=0;i<aux;i++){//percorrer e imprimir cada num do intervalo
-            printf("%d",n2+i);//saída do b
+            printf("%d\n",n2+i);//saída do b
         }//fim for
 
         break;
