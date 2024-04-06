@@ -1,46 +1,51 @@
+/*
+ex06-calculadora estranha: 
+
+remo√ß√£o no y-√©simo digito de x (x=1234,y=2, ent√£o sa√≠da=134)
+*/
+
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
-int main()
-{
-    //memÛria
-    int p10=1;//para n„o interferir no c·lculo da pot
-    int resposta=0;
-    int resto=0;
-    int x=0,y=0;
-    int quociente=0;
-    int cont=0;//contador
+int main(void) {
+  
+  //mem
+  int x,y;
+  int cont=0;//num div
+  int quociente;
+  int resto;
+  int resp=0;
+  int posicao;
 
-    //entrada
-    printf("dig x: \n");
-    scanf("%d%*c",&x);
-    printf("dig y: \n");
-    scanf("%d%*c",&y);
+  //ent
+  scanf("%d",&x);
+  scanf("%d",&y);
 
-    quociente=x;//repete q/=10 sem alterar val de x
+  quociente=x;//dividir sem perder val ini
+  
+  while(quociente!=0){//descobrir num /10
+    quociente/=10;
+    cont++;
+  }
 
-    while(quociente!=0){//descobrir qtd de divisıes inteiras para poder inverter o num e, em seguida printar na ordem correta
-        quociente/=10;
-        cont++;
+  quociente=x;
+
+  //cont = 4 ent come√ßa na posicao = cont / se posico=y ent n faz
+
+  posicao=cont;
+  
+  for(int i=0;i<cont;i++){//construir o novo num
+    
+    resto=quociente%10;
+    quociente/=10;
+
+    if(posicao!=y){//retirar num pos y
+      resp+=resto*pow(10,i);//montar o num que foi decomposto
     }
+    posicao--;
+  }
 
-    quociente=x;//atualizar o val de x
+  printf("%d",resp);//sai
 
-    for(int i=0;i<cont;i++){
-
-        resto=quociente%10;//encontrar algarismo
-        quociente/=10;
-
-        for(int p=0;p<i;p++){//calc pow 10 sem usar math.h
-            p10*=10;
-        }
-
-        if(resto!=y){//montar o num retirando o algarismo y
-            resposta+=(p10*10)+resto;
-        }
-    }
-
-    printf("%d",resposta);
-
-    return 0;
+  return 0;
 }
