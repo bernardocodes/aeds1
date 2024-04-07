@@ -1,5 +1,5 @@
 /*
-ex06-calculadora estranha: 
+ex06-calculadora estranha:
 
 remoção no y-ésimo digito de x (x=1234,y=2, então saída=134)
 */
@@ -7,45 +7,43 @@ remoção no y-ésimo digito de x (x=1234,y=2, então saída=134)
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
-  
-  //mem
-  int x,y;
-  int cont=0;//num div
-  int quociente;
-  int resto;
-  int resp=0;
-  int posicao;
+int main() {
 
-  //ent
-  scanf("%d",&x);
-  scanf("%d",&y);
+    int x,y;
+    int cont=0;//num div
+    int quociente;
+    int resto;
+    int resp=0;// =0 para n imprimir lixo
+    int indice=0;//expoente do num decomposto (ex: algarismo + 10^indice(0=unidade,1=dezena,2=centena...)
 
-  quociente=x;//dividir sem perder val ini
-  
-  while(quociente!=0){//descobrir num /10
-    quociente/=10;
-    cont++;
-  }
+    printf("dig num inteiro: \n");
+    scanf("%d",&x);
+    printf("dig posicao do algarismo que deve ser removido (da esquerda para a direita, sendo o primeiro algarismo = posicao 1: \n");
+    scanf("%d",&y);
 
-  quociente=x;
+    quociente=x;//dividir sem perder val inicial
 
-  //cont = 4 ent começa na posicao = cont / se posico=y ent n faz
-
-  posicao=cont;
-  
-  for(int i=0;i<cont;i++){//construir o novo num
-    
-    resto=quociente%10;
-    quociente/=10;
-
-    if(posicao!=y){//retirar num pos y
-      resp+=resto*pow(10,i);//montar o num que foi decomposto
+    while(quociente!=0){//descobrir número divisões x/10
+        quociente/=10;
+        cont++;
     }
-    posicao--;
-  }
 
-  printf("%d",resp);//sai
+    quociente=x;//setar o valor para dividir novamente
 
-  return 0;
+    for(int i=cont;i>0;i--){//construir o novo num
+
+        resto=quociente%10;
+        quociente/=10;
+
+        if(i!=y){//retirar num pos y
+            resp+=resto*pow(10,indice);//montar o num que foi decomposto
+            indice++;
+        }
+    }
+
+    printf("%d",resp);
+
+    return 0;
 }
+
+
