@@ -25,20 +25,28 @@ RESTRIÇÕES: Não se pode utilizar nenhum conceito não visto em sala de aula (por 
 int main()
 {
     int opc;
-    int novo_num;
     int vet[10];
-    int ind;
 
+    int novo_num;//c1
+    int ind;//c1
+    int somatorio=0;//c4
+    int duplicados=0;//c5
+    int aux;//c5
+    int cont=0;//c5
+    int posicao=0;//c5
+    int qtd=0;
+
+    printf("dig sequencia de 10 num: \n");
     for(int i=0;i<10;i++){//preencher a sequencia
         scanf("%d%*c",&vet[i]);
     }
 
     printf("menu: \n");
     printf("0. Sair do programa: \n");//ok
-    printf("1. Atualizar o valor em um indice especifico (fornecido pelo(a) usuario(a)) da sequencia: \n");
-    printf("2. Exibir sequencia: \n");
-    printf("3. Exibir sequencia em ordem reversa: \n");
-    printf("4. Exibir a somatoria de todos os valores da sequencia: \n");
+    printf("1. Atualizar o valor em um indice especifico (fornecido pelo(a) usuario(a)) da sequencia: \n");//ok
+    printf("2. Exibir sequencia: \n");//ok
+    printf("3. Exibir sequencia em ordem reversa: \n");//ok
+    printf("4. Exibir a somatoria de todos os valores da sequencia: \n");//ok
     printf("5. Exibir a contagem de numeros duplicados da sequencia: \n");
     printf("6. Exibir os valores unicos (i.e., sem repetição) da sequencia: \n");
     printf("7. Exibir a frequencia de todos os valores da sequencia: \n");
@@ -51,7 +59,7 @@ int main()
     printf("14. Exibir a sequencia rotacionada M vezes (quantidade fornecida pelo(a) usuario(a)) para a direita: \n");
 
     printf("\ndig opc: \n");
-    scanf("%d%*c",&opc);
+    scanf("%d%*c",&opc);//escolha opc
 
     while(opc!=0){
         switch(opc){
@@ -61,8 +69,42 @@ int main()
                 printf("dig novo num: ");
                 scanf("%d%*c",&novo_num);
                 vet[ind]=novo_num;
-            break;
+                for(int i=0;i<10;i++){//imprime como ficou a nova sequencia
+                    printf("%d,",vet[i]);
+                }
+                break;
+            case 2:
+                for(int i=0;i<10;i++){//exibe sequencia
+                    printf("%d,",vet[i]);
+                }
+                break;
+            case 3:
+                for(int i=9;i>=0;i--){//exibe sequencia reversa
+                    printf("%d,",vet[i]);
+                }
+                break;
+            case 4:
+                for(int i=9;i>=0;i--){//soma todos os termos e exibe
+                    somatorio+=vet[i];
+                }
+                printf("%d",somatorio);
+                break;
+            case 5:
+                for(int i=0;i<10;i++){
+                    for(int j=9;j>0;j++){
+                        aux=vet[i]*(-1);
+                        if(aux+vet[j]==0){
+                            qtd++;
+                        }
+                    }
+                }
+                printf("%d",qtd);
+                break;
+
+
         }
+        printf("\ndig nova opc do menu ou zero para finalizar: \n");
+        scanf("%d%*c",&opc);//nova opc ou encerrar
     }
     return 0;
 }
