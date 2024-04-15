@@ -58,3 +58,68 @@ int main()
     imprime();
     return 0;
 }
+//-----------------------  passando por valor:
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+//1.atualizar indice - indices linha e coluna, novo algarismo
+//2.verificar linha -
+//3.verificar coluna -
+//4.verificar quadrante -
+//5.verificar matriz -
+//6.qualquer num fora do intervalo 0-5: imprimir matriz -
+
+int mat[9][9];
+int a,b;
+int x = 7;
+
+//ler a matriz
+void ler_mat(){
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            scanf("%d%*c",&mat[i][j]);
+        }
+    }
+}
+
+//imprimir a matriz
+void imprime(){
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            printf("%d",mat[i][j]);
+        }
+        printf("\n");//qubra a linha para manter o formato da matriz
+    }
+}
+
+//1. atualizar índice
+int atualizar_indice(int a, int b){
+    int nv_n;
+
+    scanf("%d%*c",&nv_n);//novo num
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            if(i==a&&j==b){
+                mat[i][j]=nv_n;//atualiza val
+            }
+        }
+    }
+}
+
+//2.verificar a linha
+
+
+int main()
+{
+    ler_mat();
+    imprime();
+    scanf("%d%*c",&a);//coordenadas
+    scanf("%d%*c",&b);
+    atualizar_indice(a,b);
+    printf("\n");
+    imprime();
+    return 0;
+}
+
+*/
