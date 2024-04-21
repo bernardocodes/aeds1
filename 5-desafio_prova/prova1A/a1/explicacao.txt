@@ -1,0 +1,19 @@
+Este código em C realiza a análise de divisibilidade de um número fornecido pelo usuário. Vamos explicar o funcionamento passo a passo:
+
+Na linha 4, é lido um número inteiro x fornecido pelo usuário.
+Nas linhas 5 e 6, são inicializadas variáveis y, ty, cy para representar respectivamente o divisor, uma cópia de x para manipulação e um contador de divisões inteiras para y. Similarmente, z, tz, cz são inicializadas para representar o divisor, uma cópia de x para manipulação e um contador de divisões inteiras para z.
+Na linha 8, um loop while é utilizado para encontrar quantas vezes y pode ser subtraído de ty enquanto ty - y é maior ou igual a zero, incrementando o contador cy a cada subtração.
+Na linha 9, um loop for é utilizado para encontrar quantas vezes z pode ser subtraído de tz enquanto tz é maior que zero, incrementando o contador cz a cada subtração.
+Na linha 10, é verificado se ty e tz são iguais e se o quadrado deles é igual a zero. Isso verifica se ambos são divisíveis por seus respectivos divisores (y e z) e se são divisíveis por zero.
+Dependendo do resultado da verificação:
+Se ambas as condições forem verdadeiras, ou seja, ty é divisível por y, tz é divisível por z e ambos são divisíveis por zero, então imprime "Y: [valor de cy] \t Z: [valor de cz]".
+Se apenas a segunda condição for verdadeira, imprime "Y: [valor de cy]".
+Se nenhuma das condições for verdadeira, imprime "Z: [valor de cz]".
+Finalmente, retorna 0 para indicar que o programa foi executado com sucesso.
+O código basicamente conta quantas vezes y e z podem ser subtraídos de x inteiramente e verifica se x é divisível por ambos. Dependendo dos resultados, imprime o contador cy, o contador cz ou ambos.
+
+
+
+
+
+
