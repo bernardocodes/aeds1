@@ -1,0 +1,15 @@
+
+O código acima verifica se o número fornecido pelo usuário é positivo ou negativo. Em seguida, caso ele seja positivo, o algarismo 2 é elevado ao número digitado. Caso ele seja negativo, seu sinal é trocado e 0.5 recebe esse número como expoente.
+
+Isso pode ser verificado ao olhar para as seguintes linhas:
+
+- x recebe o valor 2 (linha 5),
+- y recebe o valor digitado pelo usuário (linha 6),
+- e = y; v = x; torna possível trabalhar com os valores de x e y com casas decimais (linha 7),
+- if(e*e*e<0){e*=-1;v=1/v;} mudar o sinal da entrada, se a mesma for negativa e atualiza o valor de v para o seu inverso (linha 8),
+- t=v; atualizar o valor de t para 0,5 ou para 2, dependendo se a entrada original for negativa ou positiva respectivamente (linha 9),
+- if(e%2==1){--e;} trasformar em par, caso seja impar (linha 10),
+- for(i = 1; i < e; i += 2) { t *= v * v; } operação de exponenciação caso as potencias sejam impares, onde t^v*v (linha 11),
+- ajustar o valor de t para t/y, se y for par(linha 12),
+
+
