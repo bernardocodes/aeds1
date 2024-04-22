@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+int div10(int n,int cont){
+
+    int divisor=n, dividendo=10, quociente, resto;
+
+    quociente=divisor/dividendo;//atualiza o quociente
+
+    if(quociente>0){//enquanto houver div inteiras
+        cont++;
+        divisor=quociente;
+        div10(divisor,cont);
+    }else{//
+        printf("%d",cont);
+    }
+
+}
+
+int main(){
+    int num;
+    int contador=0;
+
+    scanf("%d%*c",&num);//num que será dividido
+
+    div10(num,contador);//chama a função
+
+    return 0;
+}
+
+
+/*
+int remove_algarismo(int n){
+    int indice;
+    int divisor, dividendo, quociente, resto;
+    int potencia;
+
+    //printf("dig indice que deseja remover: ");
+    scanf("%d%*c",&indice);
+
+
+
+}
+
+int main()//main original
+{
+    int num_bizarro;
+    int opc=1;//para entrar no while
+
+    //printf("dig num bizarro: ");
+    scanf("%d%*c",&num_bizarro);
+
+    while(opc!=0){//dig zero para sair do programa
+
+        //printf("\ndig opc: ");
+        scanf("%d%*c",&opc);//ler opc
+
+        switch(opc){//escolha opc
+        case 1:
+            //chamar remove algarismo que chama dividir
+            break;
+        }
+    }
+
+    return 0;
+}
+*/
