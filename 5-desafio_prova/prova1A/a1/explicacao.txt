@@ -5,6 +5,7 @@ Nas linhas 5 e 6, são inicializadas variáveis y, ty, cy para representar respe
 Na linha 8, um loop while é utilizado para encontrar quantas vezes y pode ser subtraído de ty enquanto ty - y é maior ou igual a zero, incrementando o contador cy a cada subtração.
 Na linha 9, um loop for é utilizado para encontrar quantas vezes z pode ser subtraído de tz enquanto tz é maior que zero, incrementando o contador cz a cada subtração.
 Na linha 10, é verificado se ty e tz são iguais e se o quadrado deles é igual a zero. Isso verifica se ambos são divisíveis por seus respectivos divisores (y e z) e se são divisíveis por zero.
+
 Dependendo do resultado da verificação:
 Se ambas as condições forem verdadeiras, ou seja, ty é divisível por y, tz é divisível por z e ambos são divisíveis por zero, então imprime "Y: [valor de cy] \t Z: [valor de cz]".
 Se apenas a segunda condição for verdadeira, imprime "Y: [valor de cy]".
