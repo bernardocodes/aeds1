@@ -15,7 +15,7 @@ int main()
 
         resto=quociente%10;//resto é o digito separado
 
-        if(resto%2!=0){//digito e par? ent soma!
+        if(resto%2!=0){//digito e impar? ent soma!
             soma+=resto;
         }
 
