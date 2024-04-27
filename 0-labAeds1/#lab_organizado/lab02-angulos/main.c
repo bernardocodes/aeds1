@@ -5,7 +5,7 @@ int main()
 {
     int ang;
 
-    int quadrante, inteiro, voltas, sinal=1;
+    int quadrante, inteiro, voltas=0, sinal=1;
     int aux;
     double decomposto;
 
@@ -20,45 +20,52 @@ int main()
     //QUADRANTE???
     if(ang<180){//garante que decomposto recebe valor do ang
         decomposto=ang;
+        aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
+        decomposto=360-decomposto;
     }else if(decomposto==0){
         decomposto=ang;
+        aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
     }else{
         voltas=(ang/90)/4;//ang decomposto
         decomposto=ang-(360*voltas);
-    }
-    aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
-    printf("decomposto: %lf\n",decomposto);
-
-    if(decomposto>=0&&decomposto<=90){//filtro
-        printf("primeiro quadrante!\n");
-    }else if(decomposto>=91&&decomposto<=180){
-        printf("segundo quadrante!\n");
-    }else if(decomposto>=181&&decomposto<=270){
-        printf("terceiro quadrante!\n");
-    }else if(decomposto>=271&&decomposto<=360){
-        printf("quarto quadrante!\n");
+        aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
     }
 
     //SOBRE O EIXO???
     inteiro=decomposto;
     if(decomposto==0){
-        printf("sobre o eixo!\n");
+        printf("Este angulo se encontra em um dos eixos\n");
     }else if(inteiro%90==0){//para os eixos da primeira volta
-        printf("sobre o eixo!\n");
+        printf("Este angulo se encontra em um dos eixos\n");
+    }
+
+    //testar se era positivo ou neg
+    if(decomposto>=0&&decomposto<=90){//filtro
+        printf("Primeiro quadrante\n");
+    }else if(decomposto>=91&&decomposto<=180){
+        printf("Segundo quadrante\n");
+    }else if(decomposto>=181&&decomposto<=270){
+        printf("Terceiro quadrante\n");
+    }else if(decomposto>=271&&decomposto<=360){
+        printf("Quarto quadrante\n");
     }
 
     //NUM DE VOLTAS???
-    printf("voltas: %d\n",voltas);
+    printf("%d volta(s) ",voltas);
 
     //SENTIDO???
     if(sinal>0){
-        printf("sentido anti-horario!\n");
+        printf("sentido antihorario\n");
     }else{
-        printf("sentido horario!\n");
+        printf("sentido horario\n");
     }
 
     //QTD PARA COMPLETAR MAIS UMA VOLTA???
-    decomposto=aux;
-    printf("faltam %ld graus para mais uma volta!",360-decomposto);
+    if(sinal>0){
+        printf("Falta(m) %ld graus (sentido antihorario) para completar %d volta(s)",360-aux,voltas);
+    }else{
+        printf("Falta(m) %ld graus (sentido horario) para completar %d volta(s)",360-aux,voltas);
+    }
+
     return 0;
 }
