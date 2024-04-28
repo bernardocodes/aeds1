@@ -18,10 +18,12 @@ int main()
     }
 
     //QUADRANTE???
-    if(ang<180){//garante que decomposto recebe valor do ang
+    if(ang<=360&&ang>=0){//garante que decomposto recebe valor do ang
         decomposto=ang;
         aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
-        decomposto=360-decomposto;
+        if(sinal<0){
+            decomposto = 360 - decomposto;//se ang for negativo
+        }
     }else if(decomposto==0){
         decomposto=ang;
         aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
@@ -62,9 +64,9 @@ int main()
 
     //QTD PARA COMPLETAR MAIS UMA VOLTA???
     if(sinal>0){
-        printf("Falta(m) %ld graus (sentido antihorario) para completar %d volta(s)",360-aux,voltas);
+        printf("Falta(m) %ld graus (sentido antihorario) para completar %d volta(s)",360-aux,voltas+1);
     }else{
-        printf("Falta(m) %ld graus (sentido horario) para completar %d volta(s)",360-aux,voltas);
+        printf("Falta(m) %ld graus (sentido horario) para completar %d volta(s)",360-aux,voltas+1);
     }
 
     return 0;
