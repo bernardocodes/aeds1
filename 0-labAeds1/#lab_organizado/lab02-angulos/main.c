@@ -29,8 +29,14 @@ int main()
         aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
     }else{
         voltas=(ang/90)/4;//ang decomposto
-        decomposto=ang-(360*voltas);
+        decomposto=ang-(360*voltas);//50
+
         aux=decomposto;//manipular o decomposto e retomar esse valor mais tarde
+
+        if(sinal<0){//caso seja negativo
+            aux=360-decomposto;
+            decomposto=aux;
+        }
     }
 
     //SOBRE O EIXO???
@@ -66,7 +72,11 @@ int main()
     if(sinal>0){
         printf("Falta(m) %ld graus (sentido antihorario) para completar %d volta(s)",360-aux,voltas+1);
     }else{
-        printf("Falta(m) %ld graus (sentido horario) para completar %d volta(s)",360-aux,voltas+1);
+        if(voltas>0){
+            printf("Falta(m) %ld graus (sentido horario) para completar %d volta(s)",aux,voltas+1);//aux ou 360-aux
+        }else{
+            printf("Falta(m) %ld graus (sentido horario) para completar %d volta(s)",360-aux,voltas+1);//aux ou 360-aux
+        }
     }
 
     return 0;
