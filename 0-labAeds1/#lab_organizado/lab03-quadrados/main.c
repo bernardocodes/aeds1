@@ -16,7 +16,7 @@ int main()
 
     switch(tipo){
     case 'c':
-        for(int i=0;i<z;i++){//imprimir quadrado completamente preenchido
+        for(int i=0;i<z;i++){//IMPRIMIR O QUADRADO COMPLETAMENTE PREENCHIDO
             for(int j=0;j<z;j++){
                 printf("*");
             }
@@ -40,7 +40,7 @@ int main()
         }
         break;
     case 'p':
-        for(int i=0;i<z;i++){//imprimir somente bordas + diagonal principal
+        for(int i=0;i<z;i++){//BORDAS + DIAGONAL PRINCIPAL
             for(int j=0;j<z;j++){
 
                 if(i==0||i==z-1){//imprime bordas superior/imferior
@@ -58,7 +58,7 @@ int main()
         }
         break;
     case 's':
-        for(int i=0;i<z;i++){//imprimir somente bordas + diagonal secundaria
+        for(int i=0;i<z;i++){//BORDAS + DIAGONAL SECUNDÁRIA
             for(int j=0;j<z;j++){
 
                 if(i==0||i==z-1){//imprime bordas superior/imferior
@@ -77,7 +77,7 @@ int main()
         break;
     case 'h':
         meio=z/2;
-        for(int i=0;i<z;i++){//imprimir bordas + divisão horizontal no meio
+        for(int i=0;i<z;i++){//BORDAS + DIVISÃO HORIZONTAL NO MEIO
             for(int j=0;j<z;j++){
 
                 if(i==0||i==z-1){//imprime bordas superior/imferior
@@ -96,14 +96,14 @@ int main()
         break;
     case 'v':
         meio=z/2;
-        for(int i=0;i<z;i++){//imprimir bordas + divisão vertical no meio
+        for(int i=0;i<z;i++){//BORDAS + DIVISÃO VERTICAL NO MEIO
             for(int j=0;j<z;j++){
 
                 if(i==0||i==z-1){//imprime bordas superior/imferior
                     printf("*");
                 }else if(j==0||j==z-1){//imprime bordas laterais
                     printf("*");
-                }else if(j==meio){//faixa horizontal do meio
+                }else if(j==meio){//faixa vertical do meio
                     printf("*");
                 }else{
                     printf(" ");//preecher o interior
@@ -114,9 +114,9 @@ int main()
         }
         break;
     default:
-        printf("Nao existe essa opcao\n");
+        printf("Nao existe essa opcao\n");//erro
 
-    }//swt
+    }
 
     return 0;
 }
