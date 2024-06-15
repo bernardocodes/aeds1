@@ -1,0 +1,13 @@
+Esse código está calculando quantas vezes z e y cabem dentro de x. Essas quantidades serão guardadas nas variáveis cy e cz respectivamente.
+
+Para comprovar isso, basta olhar para o seguinte:
+
+- a sequencia de subtrações de y de x, e a contagem da mesma feita pela variável cy (linha 8),
+- o mesmo ocorre para z e x, sendo cz o contador (linha 9),
+- verifica se as divisões deram resto zero para os dois valores/ se isso for verdade, imprime cy e cz (linha 10),
+- caso o primeiro teste seja falso, testa se a primeira divisão deu resto zero/ se isso for verdade, imprime cy (linha 12),
+- caso o segundo teste seja falso, imprime cz (linha 14),
+
+
+
+
